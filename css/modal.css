@@ -1,0 +1,87 @@
+.grid {
+  display: grid;
+  padding: 4px;
+  grid-gap: 4px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.ot {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  box-shadow: 0 0 2px 1px;
+  overflow: hidden;
+  position: relative;
+  transition: 600ms;
+}
+.main_box {
+  position: relative;
+  width: 100%;
+  height: 100px;
+}
+.main_img {
+  width: 100%;
+  height: 100%;
+}
+.box {
+  position: fixed;
+  top: 50%;left: 50%;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100vh;
+  background: #00000096;
+  
+  display: grid;
+  place-items: center;
+}
+.close {
+  position: absolute;
+  top: 0;left: 0;
+  z-index: 999;
+  margin: 20px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 100px;
+  background: #ddd;
+  outline: none;
+  padding: 0;
+  box-shadow: 0 0 4px 1px;
+  cursor: pointer;
+}
+.img {
+  width: 90%;
+  border-radius: 4px;
+  box-shadow: 0 0 3px 1px;
+}
+.expand_btn {
+  position: absolute;
+  bottom: 2px;left: -40px;
+  border-radius: 100px;
+  border: 1px solid #FF6060;
+  padding: 4px 6px;
+  cursor: pointer;
+  transition: 600ms;
+  opacity: 0;
+  z-index: -1;
+  visibility: hidden;
+}
+
+
+.main_box:hover .ot {
+  transform: scale(1.02);
+  z-index: 9;
+}
+.main_box:hover .delete_btn {
+  left: 2px;
+  opacity: 1;
+  z-index: 99;
+  visibility: visible;
+}
+.main_box:hover .expand_btn {
+  left: 2px;
+  opacity: 1;
+  z-index: 99;
+  visibility: visible;
+}
