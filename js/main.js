@@ -8,7 +8,12 @@ const searchBar = document.getElementById('inp_search');
 window.onload = ()=> {
   switch(Task.GetSectionUrl()) {
     case '':
-        window.location.assign('index.html');
+        Task.GetData(box);
+        console.log(Task.GetSectionUrl());
+        
+        searchBar.addEventListener('keyup', ()=> {
+          Task.SearchFilter();
+        });
       break;
     case 'index.html':
         Task.GetData(box);
